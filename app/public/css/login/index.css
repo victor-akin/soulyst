@@ -1,0 +1,34 @@
+/*form*/
+body{
+    background-color: springgreen;
+    
+}
+.login-form {
+    width: 20%;
+    height: 400px;
+    padding: 1px;
+    margin: 100px auto;
+}
+.form-wrapper{
+/*    border: 4px solid black;*/
+    width: 120%;
+    height: 100%;
+    padding: 5px;
+   
+}
+.form-field{
+    width: 70%;
+    height: 20%;
+    margin: 4px;
+}
+input {
+     
+     height: 40px;
+     width: 120%;
+     padding: 0px;
+     margin: 20px; 
+}
+.other{
+    margin-top: 19%;
+    text-align: center;
+}
