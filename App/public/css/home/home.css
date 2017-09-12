@@ -1,20 +1,9 @@
-body,
-nav,
-select,
-li,
-div,
-footer,
-section {
+body, nav, select, li, div, footer, section {
     margin: 0;
     padding: 0;
 }
 
-aside,
-article,
-section,
-header,
-footer,
-nav {
+aside, article, section, header,footer,nav {
     display: block;
 }
 

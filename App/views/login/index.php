@@ -10,17 +10,17 @@
  
  <div class="login-form">
                 <div class="form-wrapper">
-                <form>
+                <form method="post" action="">
                     <div class="form-field">
                        <label for="email" class="email"></label> 
-                        <input type="email" name="email" value="email@email.com" placeholder="email@email.com" />
+                        <input type="email" name="email" value="" placeholder="email@email.com" />
                     </div>
                     <div class="form-field">
                        <label for="password" class="password"></label>
-                        <input type="password" name="password" value="password" placeholder="password" />
+                        <input type="password" name="password" value="" placeholder="password" />
                     </div>
                     <div class="form-field">
-                        <input type="submit" />
+                        <input type="submit" name="login"/>
                     </div>
                     
                 </form>

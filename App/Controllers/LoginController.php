@@ -10,6 +10,8 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Libs\Classes\Users;
+use App\Models\LoginModel;
 
 
 class LoginController extends Controller
@@ -19,9 +21,19 @@ class LoginController extends Controller
         parent::__construct();
     }
 
+
+    /*
+     * login user
+     */
     public function index()
     {
         $this->view->render('login/index');
+        if(isset($_POST['login'])) {
+            $usermodel = new LoginModel();
+            $usermodel->userLogin($_POST) ;
+
+        }
     }
+
 
 }

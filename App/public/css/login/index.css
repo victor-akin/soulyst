@@ -1,6 +1,6 @@
 /*form*/
 body{
-    background-color: springgreen;
+    /*background-color: springgreen;*/
     
 }
 .login-form {
@@ -22,7 +22,7 @@ body{
     margin: 4px;
 }
 input {
-     
+     background-color: white;
      height: 40px;
      width: 120%;
      padding: 0px;

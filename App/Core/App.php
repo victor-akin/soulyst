@@ -79,7 +79,7 @@ class App
     {
         $controller_file = __DIR__ . '/../Controllers/' . ucwords($controller) . 'Controller.php';
         if (file_exists($controller_file))
-            $this->controller = 'app\controllers\\'.ucwords($controller) . 'Controller';
+            $this->controller = 'App\controllers\\'.ucwords($controller) . 'Controller';
         else
             $this->__handleError(404);
     }

@@ -20,7 +20,7 @@ class Views
 
     public function render($view='')
     {
-        require_once '/../../App/views/'.$view.'.php';
+        require_once 'App/views/'.$view.'.php';
     }
 
 }
