@@ -10,10 +10,10 @@
 namespace App\Controllers;
 
 
-use App\Libs\Classes\Users;
-use App\Libs\Classes\Validator;
 use App\Core\Controller;
 use App\Models\HomeModel;
+use App\Libs\Classes\Users;
+use App\Libs\Classes\Validator;
 
 
 class HomeController extends Controller

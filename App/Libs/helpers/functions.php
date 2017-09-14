@@ -24,7 +24,7 @@ function hashpass($pass, $algorithm = PASSWORD_BCRYPT)
 function is_loggedin()
 {
     if(empty(\App\Libs\Classes\Users::loggedin()) || \App\Libs\Classes\Users::loggedin() === '') return false;
-    return true;
+    return $_SESSION[USER_SALT];
 }
 
 

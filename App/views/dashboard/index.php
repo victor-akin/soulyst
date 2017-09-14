@@ -1,16 +1,10 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Soulyst</title>
-        <link rel="stylesheet" href="<?php echo STYLES ;?>dashboard/index.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-    <body>
-
-    LOGGED IN USER <br>
+Welcome <?php echo $this->user->fullname; ?>
     <a href="<?php echo PROJECT_PATH.'home'; ?>">Home</a>
     <a href="<?php echo PROJECT_PATH.'logout/index'; ?>">Logout</a>
     <?php
 
     ?>
+
+Your avalable playlist
+             <span><a href="<?php echo PROJECT_PATH.'dashboard/upload' ?>">Click to Upload</a></span>
+

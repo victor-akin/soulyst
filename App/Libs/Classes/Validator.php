@@ -44,4 +44,28 @@ class Validator
         return empty($errors) ? false : $errors;
     }
 
+    public static function validateUpload ($files)
+    {
+        $errors = [];
+        foreach ($files as $key => $value) {
+            foreach ($value['type'] as $type) {
+                if ($type == "audio/mp3" ||
+                    $type == "application/x-zip-compressed" ||
+                    $type == "audio/mp4" ||
+                    $type == "audio/wav" ||
+                    $type == "application/zip" ||
+                    $type == "application/octet-stream") {
+
+                    $errors['Valid File'] = 'Valid File'; //none of the conditions failed
+                } else  $errors['Invalid File'] = 'Invalid File'; //files do not have valid format
+            }
+            foreach ($value['size'] as $size) {
+                if ($size <2000000 ) {
+                    $errors['File Size'] = 'Too Small';
+                }
+            }
+        }
+        return $errors;
+    }
+
 }

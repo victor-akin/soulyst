@@ -34,7 +34,7 @@ class Users extends Classes
             $query = $this->db->query("SELECT password,salt FROM {$this->table} WHERE email=:email", ['email'=>$data['email']]);
             $result = $query->fetch();
             if(password_verify($data['password'],$result->password)) {
-                Session::set(USER_SALT, $result->password);
+                Session::set(USER_SALT, $result->salt);
                 redirect_to('dashboard');
             }
         }
@@ -58,6 +58,15 @@ class Users extends Classes
     {
         $users = $this->db->query("SELECT * FROM {$this->table}");
         return $users->fetchAll();
+    }
+
+    /*
+     * get user base on salt provided
+     */
+    public function getUser($salt)
+    {
+        $user = $this->db->query("SELECT * FROM {$this->table} WHERE salt=:salt", ['salt'=>"$salt"]);
+        return $user->fetch();
     }
 
     /*
