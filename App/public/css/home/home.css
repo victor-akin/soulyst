@@ -25,11 +25,18 @@ body {
 
 .top-banner {
     border:1px solid darkgreen;
-    margin: auto;
-    padding: 1px;
+    margin: 3px auto;
+    padding: 25px;
     width: 100%;
-    height: 50%;
+    height: 70%;
 }
+
+.top-banner-content {
+    margin: 2px;
+    padding: 3px;
+    height:70%;
+}
+
 
 .content {
     width: 100%;
@@ -51,7 +58,7 @@ nav {
 }
 
 .categories {
-    padding: 5px;
+    padding: 0;
 }
 
 footer {
@@ -112,7 +119,7 @@ a {
 
 
 
-/* modile */
+/* mobile */
 
 @media only screen and (max-width:480px) {
 

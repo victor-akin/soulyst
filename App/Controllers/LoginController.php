@@ -23,16 +23,16 @@ class LoginController extends Controller
 
 
     /*
-     * login user
+     * login dashboard
      */
     public function index()
     {
-        $this->view->render('login/index');
         if(isset($_POST['login'])) {
             $usermodel = new LoginModel();
             $usermodel->userLogin($_POST) ;
 
         }
+        $this->view->render('login/index');
     }
 
 

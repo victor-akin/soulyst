@@ -1,6 +1,6 @@
 <?php
 
-use app\core\App;
+use App\Core\App;
 
 require_once __DIR__ . '/App/Libs/init.php';
 

@@ -1,13 +1,3 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Soulyst</title>
-        <link rel="stylesheet" href="<?php echo STYLES ;?>login/index.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    
-    <body> 
- 
  <div class="login-form">
                 <div class="form-wrapper">
                 <form method="post" action="">
@@ -30,6 +20,3 @@
                         </div>
                 </div>
             </div>
-
-</body>
-</html>

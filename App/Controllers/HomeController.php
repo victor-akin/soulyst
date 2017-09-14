@@ -10,12 +10,15 @@
 namespace App\Controllers;
 
 
+use App\Libs\Classes\Users;
+use App\Libs\Classes\Validator;
 use App\Core\Controller;
 use App\Models\HomeModel;
 
 
 class HomeController extends Controller
 {
+
     public function __construct()
     {
         parent::__construct();
@@ -27,5 +30,26 @@ class HomeController extends Controller
         $this->view->users = $homeModel->getAllUsers();
         $this->view->render('home/index');
     }
+
+    public function register()
+    {
+        $this->view->msg = 'Sign Up';
+
+        if(isset($_POST['register'])) {
+            unset($_POST['register']);
+            $data = $_POST;
+            $errors = Validator::validateForms($data);
+            if(empty($errors)) {
+                $users = new Users;
+                if($users->register($data)) {
+                    $this->view->msg = "Account Created Successfully";
+                } else $this->view->msg = "Account could not be created";
+
+            } else $this->view->msg = 'Errors in fields';
+        }
+        $this->view->render('home/register');
+    }
+
+
 
 }

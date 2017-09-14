@@ -31,9 +31,12 @@ class Users extends Classes
         $query = $this->db->query("SELECT email FROM {$this->table} WHERE email=:email", ['email'=>$data['email'] ]);
         if($query->rowCount() > 0) {
             //password verification
-            $query = $this->db->query("SELECT password FROM {$this->table} WHERE email=:email", ['email'=>$data['email']]);
-            $password = $query->fetch();
-            if($data['password'] === $password->password) redirect_to('dashboard');
+            $query = $this->db->query("SELECT password,salt FROM {$this->table} WHERE email=:email", ['email'=>$data['email']]);
+            $result = $query->fetch();
+            if(password_verify($data['password'],$result->password)) {
+                Session::set(USER_SALT, $result->password);
+                redirect_to('dashboard');
+            }
         }
         return false;
 
@@ -44,7 +47,8 @@ class Users extends Classes
      */
     public function logout()
     {
-
+        session_destroy();
+        redirect_to('home');
     }
 
     /*
@@ -59,17 +63,33 @@ class Users extends Classes
     /*
      *
      */
-    public function register()
+    public function register($data)
     {
+        $slug_string = $data['username'].' '._generate_id();
+        $data['slug'] = _generate_slug($slug_string,$this->table);
+        $data['password'] = hashpass($data['password']);
+        $data['salt'] = hashpass($data['email']);
 
+        if(!$this->__userExits($data['email'])) {
+            $insert = $this->db->insert($this->table, $data);
+            if($insert) return true;
+            return false; //if record could not be created
+        }else return false;
+    }
+
+    public static function loggedin()
+    {
+        return Session::get();
     }
 
     /*
      *
      */
-    private function __userExits()
+    private function __userExits($email)
     {
-
+        $email = $this->db->query("SELECT email FROM {$this->table} WHERE email=:email", ['email'=>$email] );
+        if($email->rowCount() > 0) return true; //user exists
+        return false;
     }
 
 }

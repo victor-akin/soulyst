@@ -13,14 +13,15 @@ namespace App\Core;
 
 class Views
 {
-    public function __construct()
-    {
 
-    }
 
-    public function render($view='')
+    public function __construct() {}
+
+    public function render($view='', $header='_includes/header', $footer='_includes/footer')
     {
+        require_once 'App/views/'.$header.'.php';
         require_once 'App/views/'.$view.'.php';
+        require_once 'App/views/'.$footer.'.php';
     }
 
 }

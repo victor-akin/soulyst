@@ -9,8 +9,8 @@ aside, article, section, header,footer,nav {
 
 body {
     margin: 5%;
-    padding: 1%;
-    width: 100%;
+    padding: 0;
+    width: 90%;
     height: 100%;
 }
 
