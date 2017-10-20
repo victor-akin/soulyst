@@ -60,6 +60,11 @@ class App
         if ( isset($url[0]) ) {
             $this->__checkForController($url[0]);
             unset($url[0]);
+        } else {
+            $url[0] = 'home';
+            $this->__checkForController($url[0]);
+            unset($url[0]);
+            return array_values($url);
         }
         return array_values($url);
     }

@@ -13,5 +13,15 @@ use App\Core\Models;
 
 class UploadModel extends Models
 {
+    public $userTable;
+    public $lystsTable;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->userTable = 'usersz';
+        $this->lystsTable = 'lysts';
+    }
 
 }

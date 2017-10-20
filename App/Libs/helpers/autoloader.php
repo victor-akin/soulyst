@@ -10,8 +10,7 @@
 
 spl_autoload_register(function($className) {
     $className = preg_replace('/\\\/', DIRECTORY_SEPARATOR, $className);
-    $project_dir = str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']);
-    require_once $project_dir . $className . '.php';
+    require_once $className . '.php';
 });
 
 //spl_autoload_extensions(".php");
