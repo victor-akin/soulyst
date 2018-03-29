@@ -2,15 +2,49 @@
 <html>
 <head>
     <title>Soulyst</title>
-    <link rel="stylesheet" href="<?php echo STYLES ;?>home/home.css" />
-    <link rel="stylesheet" href="<?php echo STYLES ;?>login/index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="<?php echo STYLES ;?>index.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo STYLES ;?>vendor/materialize.min.css"  media="screen,projection"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
-    <div class="top-banner">
-        <div class="top-banner-content">section Well variables inside namespaces do not override others since variables are never affected by namespace but always global:"Although any valid PHP code can be contained within a namespace, only four types of code are affected by namespaces: classes, interfaces, functions and constants. "
-            section Well variables inside namespaces do not override others since variables are never affected by namespace but always global:"Although any valid PHP code can be contained within a namespace, only four types of code are affected by namespaces: classes, interfaces, functions and constants. "</div>
+  <header>  
+    <div class="top-banner-content">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                <li>
+                     <nav>
+                        <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                        </div>
+                    </nav>
+                </li>
+                <li><a href="<?php echo PROJECT_PATH.'login'; ?>">Login</a></li>
+                <li><a href="<?php echo PROJECT_PATH.'home/register'; ?>">Register</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
+  </header>
+    <main>
     <div>
+    &nbsp
+
+     
+                

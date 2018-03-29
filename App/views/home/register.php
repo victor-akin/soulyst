@@ -1,37 +1,40 @@
-<a href="<?php echo PROJECT_PATH.'home' ?>">Home</a> |
-
-<?php
-    echo $this->msg;
-?>
-
-<div class="login-form">
-    <div class="form-wrapper">
-        <form method="post" action="">
-
-            <div class="form-field">
-                <label for="fullname" class="fullname"></label>
-                <input type="text" name="fullname" value="" placeholder="fullname" />
-            </div>
-
-            <div class="form-field">
-                <label for="username" class="username"></label>
-                <input type="text" name="username" value="" placeholder="username" />
-            </div>
-
-            <div class="form-field">
-                <label for="email" class="email"></label>
-                <input type="email" name="email" value="" placeholder="email@email.com" />
-            </div>
-
-            <div class="form-field">
-                <label for="password" class="password"></label>
-                <input type="password" name="password" value="" placeholder="password" />
-            </div>
-
-            <div class="form-field">
-                <input type="submit" name="register" value="Register" />
-            </div>
-
-        </form>
+<div class="row">
+ <div class="col s5 offset-s4">
+ &nbsp
+    <div class="login-form ">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a target="_self" href="#">Sign Up</a></li>
+        <li class="tab col s6"><a target="_self" class="active" href="<?php echo PROJECT_PATH.'home'; ?>">Home</a></li>
+      </ul>
     </div>
-</div>
+        <div class="form-wrapper">
+            <form method="post" action="">
+
+               <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">fullname</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">email</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">password</label>
+                </div>
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Register
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+        </div>
+    </div>
+ </div>    
+</div>    
